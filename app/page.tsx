@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { RiArrowRightLine, RiMailLine } from "react-icons/ri";
+import { RiArrowRightLine, RiMailLine, RiFilterLine } from "react-icons/ri";
 import { skills } from "./utils/constants";
 import { TypeAnimation } from "react-type-animation";
 
@@ -92,7 +92,7 @@ export default function Home() {
             <span className="font-bold text-transparent bg-clip-text bg-gradient-to-br from-blue-700 via-teal-600 to-green-600 dark:from-blue-400 dark:via-teal-300 dark:to-green-400">
               software enthusiast
             </span>
-            , I love turning tricky problems into elegant products.
+            , I love solving tricky problems and building elegant products.
           </motion.p>
 
           <motion.p
@@ -168,20 +168,36 @@ export default function Home() {
         transition={{ duration: 1 }}
         className="mt-12"
       >
-        <h2 className="font-semibold text-lg mb-6 text-center lg:text-left">
-          Skills &amp; Technologies
-        </h2>
+        {/* Title with filter icon */}
+        <div className="flex items-center justify-center lg:justify-start mb-6 gap-2">
+          <h2 className="font-semibold text-lg">Skills &amp; Technologies</h2>
+          <button
+            aria-label="Filter skills"
+            className="p-1 rounded-full 
+      hover:bg-gray-200 dark:hover:bg-gray-700
+      transition-all duration-500 ease-in-out
+      hover:rotate-[360deg]"
+          >
+            <RiFilterLine className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+          </button>
+        </div>
 
-        <div className="flex flex-wrap justify-center lg:justify-start gap-2">
+        {/* Skills chips */}
+        <div className="flex flex-wrap justify-center lg:justify-start gap-3">
           {skills.map((skill, i) => (
             <motion.span
               key={skill}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.25, delay: i * 0.04 }}
-              className="border border-gray-500/60 dark:border-gray-400/40 rounded-md px-3 py-1 text-xs lg:text-sm hover:bg-gray-200/40 dark:hover:bg-gray-700/40 transition-colors"
+              className="border border-gray-400 dark:border-gray-500 
+    rounded-xl px-4 py-1.5 text-xs lg:text-sm
+    text-gray-800 dark:text-gray-200
+    bg-white-100 dark:bg-white/5
+    hover:bg-gray-200 dark:hover:bg-white/20
+    hover:scale-[1.08] transition-all duration-200 ease-out shadow-sm"
             >
-              {skill}
+              <button className="w-full h-full text-inherit">{skill}</button>
             </motion.span>
           ))}
         </div>
