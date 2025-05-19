@@ -221,22 +221,31 @@ export default function Home() {
 
         {/* Skills chips */}
         <div className="flex flex-wrap justify-center lg:justify-start gap-3">
-          {skills.map((skill, i) => (
-            <motion.span
-              key={skill}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.25, delay: i * 0.04 }}
-              className="border border-gray-400 dark:border-gray-500 
-    rounded-xl px-4 py-1.5 text-xs lg:text-sm
-    text-gray-800 dark:text-gray-200
-    bg-white-100 dark:bg-white/5
-    hover:bg-gray-200 dark:hover:bg-white/20
-    hover:scale-[1.08] transition-all duration-200 ease-out shadow-sm"
-            >
-              <button className="w-full h-full text-inherit">{skill}</button>
-            </motion.span>
-          ))}
+          {skills
+            .filter(
+              (skill) =>
+                (category === "All" || skill.categories.includes(category)) &&
+                skill.proficiency >= range[0] &&
+                skill.proficiency <= range[1]
+            )
+            .map((skill, i) => (
+              <motion.span
+                key={skill.name}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.25, delay: i * 0.04 }}
+                className="border border-gray-400 dark:border-gray-500 
+          rounded-xl px-4 py-1.5 text-xs lg:text-sm
+          text-gray-800 dark:text-gray-200
+          bg-gray-100 dark:bg-white/5
+          hover:bg-gray-200 dark:hover:bg-white/20
+          hover:scale-[1.08] transition-all duration-200 ease-out shadow-sm"
+              >
+                <button className="w-full h-full text-inherit">
+                  {skill.name}
+                </button>
+              </motion.span>
+            ))}
         </div>
       </motion.div>
     </section>
