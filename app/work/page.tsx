@@ -3,16 +3,10 @@ import { workExperiences } from "../utils/constants";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Work - Yug Bhanushali",
+  title: "Work - Jingqiao",
   description:
     "Discover my work experience and the companies I've collaborated with.",
-  openGraph: {
-    title: "Work - Yug Bhanushali",
-    description:
-      "Discover my work experience and the companies I've collaborated with.",
-    url: "https://yugbhanushali.com/work",
-    images: "https://yugbhanushali.com/api/og?type=Work",
-  },
+
 };
 
 export default function Page() {

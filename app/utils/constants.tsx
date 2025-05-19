@@ -7,6 +7,8 @@ import {
   RiGitRepositoryLine,
 } from "react-icons/ri";
 
+import React from "react";
+
 export interface Project {
   title: string;
   description: string;
@@ -29,12 +31,13 @@ export interface BlogPost {
 export interface WorkExperience {
   company: string;
   role: string;
-  description: string;
+  description: React.ReactNode;
   websiteLink: string;
   endDate: string | null;
   startDate: string;
   currentlyWorking: boolean;
   technologies: string[];
+  logo?: string;
 }
 
 export interface SocialLink {
@@ -119,50 +122,143 @@ export const projects: Project[] = [
 
 export const workExperiences: WorkExperience[] = [
   {
-    company: "Tracks and Towers Pvt Ltd",
-    role: "Founding Engineer",
-    description: `
-      Building scalable backend systems and managing deployments, with occasional frontend development.
-    `,
-    websiteLink: "https://tracksandtowers.com",
-    startDate: "March 2024",
-    endDate: "December 2024",
-    currentlyWorking: false,
+    company: "BigHat Biosciences",
+    role: "Software Engineer (Co-op)",
+    description: (
+      <ul className="list-disc pl-5 space-y-1">
+        <li>
+          <strong>Audit-Trail&nbsp;UI</strong> — React + TypeScript front-end +
+          Python/Falcon API on DynamoDB; record look-ups now take seconds for
+          35 + scientists.
+        </li>
+        <li>
+          Maintained a <strong>serverless event pipeline</strong> (AWS Lambda +
+          Kinesis) that guarantees loss-less, traceable LIMS events.
+        </li>
+        <li>
+          Authored <strong>hands-free CI/CD</strong>: BuildSpec workflows build,
+          test & publish pinned Docker images in &lt; 5 min (vs. 30 min manual).
+        </li>
+        <li>
+          Standardised 80 + Pydantic/SQLAlchemy models on a common ORM base,
+          trimming boilerplate 5 % and easing audits.
+        </li>
+      </ul>
+    ),
+    websiteLink: "https://www.bighatbio.com",
+    startDate: "2025-01",
+    endDate: null,
+    currentlyWorking: true,
     technologies: [
-      "TypeScript",
-      "Node.js",
-      "Next.js",
-      "Supabase",
-      "Shadcn",
-      "NextAuth",
-      "Zod",
-      "Prisma",
-      "VPS",
-      "Docker",
-      "CI/CD",
-      "Grafana",
-      "Prometheus",
+      "React", "TypeScript", "Python", "FastAPI", "AWS", "AWS lambda", "AWS Kinesis",
+      "DynamoDB", "Docker", "Alembic", "SQLAlchemy", "Pydantic", "PostgreSQL", "cypress"
     ],
+    logo: "/logos/bighat.svg"
   },
   {
-    company: "Healiom Inc",
-    role: "Frontend Development Intern",
-    description: `
-      Worked on developing and improving the patient portal.
-    `,
-    websiteLink: "https://healiom.com",
-    startDate: "March 2024",
-    endDate: "May 2024",
+    company: "UCSF – Andrej Šali Lab",
+    role: "Student Research Intern",
+    description: (
+      <ul className="list-disc pl-5 space-y-1">
+        <li>
+          Automated GPU scheduling for 200 + MD runs, saving ≈ 10
+          engineer-hours/week.
+        </li>
+        <li>
+          Built RMSD, trajectory & pair-distance pipelines to validate every
+          simulation.
+        </li>
+        <li>
+          Developed <strong>Markov State Models</strong> to reveal transitions
+          in disordered proteins.
+        </li>
+        <li>
+          Integrated FRET data into MD workflows, boosting simulation fidelity.
+        </li>
+      </ul>
+    ),
+    websiteLink: "https://salilab.org",
+    startDate: "2023-03",
+    endDate: "2023-09",
     currentlyWorking: false,
     technologies: [
-      "React.js",
-      "Redux",
-      "JavaScript",
-      "Shadcn UI",
-      "GetStream SDK",
+      "Python", "bash", "GROMACS", "OpenMM", "PyTorch", "NumPy", "Pandas",
+      "Markov State Models", "GPU Computing"
     ],
+    logo: "/logos/ucsf.svg"
   },
+
+  {
+    company: "Lawrence Berkeley National Laboratory — Biological Systems & Engineering",
+    role: "Student Backend Engineer",
+    description: (
+      <ul className="list-disc pl-5 space-y-1">
+        <li>
+          Co-designed an OO <strong>retrosynthesis algorithm</strong> that
+          generates PKS sequences for target molecules.
+        </li>
+        <li>
+          Upgraded ClusterCAD backend (Python + Django) and integrated the new
+          algorithm.
+        </li>
+        <li>
+          Algorithm adopted by multiple LBNL teams in their web tools.
+        </li>
+      </ul>
+    ),
+    websiteLink: "https://biosciences.lbl.gov",
+    startDate: "2022-08",
+    endDate: "2023-02",
+    currentlyWorking: false,
+    technologies: ["Python", "Django", "PostgreSQL", "React"],
+  },
+
+  {
+    company: "Geopogo",
+    role: "Software Engineer Intern",
+    description: (
+      <ul className="list-disc pl-5 space-y-1">
+        <li>
+          Prototyped a MagicLeap console app in Unity for one-handed 3-D model
+          interaction.
+        </li>
+        <li>
+          Implemented a <strong>gravity-gun</strong> ray-casting system inspired
+          by G-Mod.
+        </li>
+        <li>
+          Prototype adopted by firms to demo architectural models in mixed
+          reality.
+        </li>
+      </ul>
+    ),
+    websiteLink: "https://www.geopogo.com/",
+    startDate: "2022-05",
+    endDate: "2022-09",
+    currentlyWorking: false,
+    technologies: ["Unity", "C#", "MagicLeap", "AR"],
+  },
+
+  {
+    company: "Institute of Computing Technology, Chinese Academy of Sciences",
+    role: "Student Researcher",
+    description: (
+      <ul className="list-disc pl-5">
+        <li>
+          Built a mass-spectrometry peptide-matching pipeline, dramatically
+          accelerating MS-2 identifications.
+        </li>
+      </ul>
+    ),
+    websiteLink: "http://english.ict.cas.cn",
+    startDate: "2019-06",
+    endDate: "2019-08",
+    currentlyWorking: false,
+    technologies: ["Python", "Shell", "Bioinformatics", "Mass Spectrometry"],
+  }
 ];
+
+
 export const skills = [
   {
     name: "React.js",
