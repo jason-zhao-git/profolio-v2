@@ -29,7 +29,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="fixed bottom-0 left-0 right-0 bg-white dark:bg-black bg-opacity-70 dark:bg-opacity-70 backdrop-blur-md p-4">
+    <footer className="fixed bottom-0 left-0 right-0 bg-white dark:bg-black bg-opacity-40 dark:bg-opacity-60 backdrop-blur-md z-10 p-4">
       <nav className="flex justify-center space-x-6">
         {navItems.map((item) => (
           <Link

@@ -1,13 +1,27 @@
 "use client";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Link from "next/link";
 import { RiArrowRightLine, RiMailLine, RiFilterLine } from "react-icons/ri";
 import { skills } from "./utils/constants";
 import { TypeAnimation } from "react-type-animation";
+import FilterBar from "../components/FilterBar";
+
+const filterVariants = {
+  hidden: { opacity: 0, height: 0, y: -10 },
+  show: { opacity: 1, height: "auto", y: 0 },
+};
 
 export default function Home() {
+  const [showFilter, setShowFilter] = useState(false);
+  const [category, setCategory] = useState("All");
+  const [range, setRange] = useState<number[]>([1, 5]);
+
   return (
-    <section className="flex flex-col w-full sm:w-full md:w-[70%] lg:w-[50%] px-5 sm:px-2 md:px-4 lg:px-6 mt-8">
+    <section
+      className="pb-32
+ flex flex-col w-full sm:w-full md:w-[70%] lg:w-[50%] px-5 sm:px-2 md:px-4 lg:px-6 mt-8"
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -169,18 +183,41 @@ export default function Home() {
         className="mt-12"
       >
         {/* Title with filter icon */}
-        <div className="flex items-center justify-center lg:justify-start mb-6 gap-2">
-          <h2 className="font-semibold text-lg">Skills &amp; Technologies</h2>
+        <div className="flex items-center justify-center lg:justify-start gap-2 mb-4">
+          <h2 className="font-semibold text-lg text-gray-900 dark:text-gray-200">
+            Skills&nbsp;&amp;&nbsp;Technologies
+          </h2>
+
           <button
             aria-label="Filter skills"
-            className="p-1 rounded-full 
-      hover:bg-gray-200 dark:hover:bg-gray-700
-      transition-all duration-500 ease-in-out
-      hover:rotate-[360deg]"
+            onClick={() => setShowFilter(!showFilter)}
+            className="p-1 rounded-full transition-all duration-500 ease-in-out
+      hover:bg-gray-200 dark:hover:bg-gray-700 hover:rotate-[360deg]"
           >
             <RiFilterLine className="w-5 h-5 text-gray-700 dark:text-gray-300" />
           </button>
         </div>
+
+        {/* ——— Animated filter panel ——— */}
+        <motion.div
+          initial="hidden"
+          animate={showFilter ? "show" : "hidden"}
+          variants={filterVariants}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+          className="overflow-hidden"
+        >
+          <div
+            className="bg-white/70 dark:bg-black/40 backdrop-blur
+      border border-gray-300 dark:border-gray-600 rounded-xl shadow-md p-4 mb-6"
+          >
+            <FilterBar
+              category={category}
+              setCategory={setCategory}
+              range={range}
+              setRange={setRange}
+            />
+          </div>
+        </motion.div>
 
         {/* Skills chips */}
         <div className="flex flex-wrap justify-center lg:justify-start gap-3">
