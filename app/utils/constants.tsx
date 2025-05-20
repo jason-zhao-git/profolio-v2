@@ -5,6 +5,8 @@ import {
   RiGithubLine,
   RiFileTextLine,
   RiGitRepositoryLine,
+  RiInstagramLine,
+  RiYoutubeLine,
 } from "react-icons/ri";
 
 import React from "react";
@@ -128,8 +130,8 @@ export const workExperiences: WorkExperience[] = [
       <ul className="list-disc pl-5 space-y-1">
         <li>
           <strong>Audit-Trail&nbsp;UI</strong> — React + TypeScript front-end +
-          Python/Falcon API on DynamoDB; record look-ups now take seconds for
-          35 + scientists.
+          Python/Falcon API on DynamoDB; record look-ups now take seconds for 35
+          + scientists.
         </li>
         <li>
           Maintained a <strong>serverless event pipeline</strong> (AWS Lambda +
@@ -150,10 +152,22 @@ export const workExperiences: WorkExperience[] = [
     endDate: null,
     currentlyWorking: true,
     technologies: [
-      "React", "TypeScript", "Python", "FastAPI", "AWS", "AWS lambda", "AWS Kinesis",
-      "DynamoDB", "Docker", "Alembic", "SQLAlchemy", "Pydantic", "PostgreSQL", "cypress"
+      "React",
+      "TypeScript",
+      "Python",
+      "FastAPI",
+      "AWS",
+      "AWS lambda",
+      "AWS Kinesis",
+      "DynamoDB",
+      "Docker",
+      "Alembic",
+      "SQLAlchemy",
+      "Pydantic",
+      "PostgreSQL",
+      "cypress",
     ],
-    logo: "/logos/bighat.svg"
+    logo: "/logos/bighat.svg",
   },
   {
     company: "UCSF – Andrej Šali Lab",
@@ -182,14 +196,22 @@ export const workExperiences: WorkExperience[] = [
     endDate: "2023-09",
     currentlyWorking: false,
     technologies: [
-      "Python", "bash", "GROMACS", "OpenMM", "PyTorch", "NumPy", "Pandas",
-      "Markov State Models", "GPU Computing"
+      "Python",
+      "bash",
+      "GROMACS",
+      "OpenMM",
+      "PyTorch",
+      "NumPy",
+      "Pandas",
+      "Markov State Models",
+      "GPU Computing",
     ],
-    logo: "/logos/ucsf.svg"
+    logo: "/logos/ucsf.svg",
   },
 
   {
-    company: "Lawrence Berkeley National Laboratory — Biological Systems & Engineering",
+    company:
+      "Lawrence Berkeley National Laboratory — Biological Systems & Engineering",
     role: "Student Backend Engineer",
     description: (
       <ul className="list-disc pl-5 space-y-1">
@@ -201,9 +223,7 @@ export const workExperiences: WorkExperience[] = [
           Upgraded ClusterCAD backend (Python + Django) and integrated the new
           algorithm.
         </li>
-        <li>
-          Algorithm adopted by multiple LBNL teams in their web tools.
-        </li>
+        <li>Algorithm adopted by multiple LBNL teams in their web tools.</li>
       </ul>
     ),
     websiteLink: "https://biosciences.lbl.gov",
@@ -255,9 +275,8 @@ export const workExperiences: WorkExperience[] = [
     endDate: "2019-08",
     currentlyWorking: false,
     technologies: ["Python", "Shell", "Bioinformatics", "Mass Spectrometry"],
-  }
+  },
 ];
-
 
 export const skills = [
   {
@@ -641,24 +660,24 @@ export const socialLinks: SocialLink[] = [
     href: "zhao.jing.qiao1@gmail.com",
   },
   {
-    name: "Twitter",
-    icon: RiTwitterXLine,
-    href: "",
-  },
-  {
     name: "LinkedIn",
     icon: RiLinkedinLine,
-    href: "https://www.linkedin.com/in/yug-bhanushali-b3b872224/",
+    href: "https://www.linkedin.com/in/jingqiao-zhao/",
   },
   {
     name: "GitHub",
     icon: RiGithubLine,
-    href: "https://github.com/YugBhanushali",
+    href: "https://github.com/jason-zhao-git",
   },
-  { name: "Resume", icon: RiFileTextLine, href: "/resume/Yug-Bhanushali.pdf" },
+  { name: "Resume", icon: RiFileTextLine, href: "/resume/jin_zhao.pdf" },
   {
-    name: "Repository",
-    icon: RiGitRepositoryLine, // You can choose a suitable icon
-    href: "https://github.com/YugBhanushali/v2-portfolio", // Replace with your repo link
+    name: "Playlist",
+    icon: RiYoutubeLine,
+    href: "https://music.youtube.com/playlist?list=PL5K3bNYKh_g5g7-iu3gfT8lkslS0JE8ub&si=o2BLEKNGmC_Dr4f-",
+  },
+  {
+    name: "Instagram",
+    icon: RiInstagramLine,
+    href: "https://www.instagram.com/jing.zh_/",
   },
 ];
