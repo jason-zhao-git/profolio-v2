@@ -681,3 +681,108 @@ export const socialLinks: SocialLink[] = [
     href: "https://www.instagram.com/jing.zh_/",
   },
 ];
+
+export interface Education {
+  school: string;
+  degree: string | React.ReactNode;
+  gpa?: string;
+  startDate: string; // "YYYY-MM"
+  endDate: string; // "YYYY-MM"
+  description: React.ReactNode;
+  logo: string; // path to SVG / PNG seal
+  website: string;
+}
+
+export const educationData: Education[] = [
+  {
+    school: "University of Michigan, Ann Arbor",
+    degree: "M.S. in Bioinformatics",
+    startDate: "2025-08",
+    endDate: "2027-05",
+    gpa: "Expected 2027",
+    website: "https://umich.edu",
+    logo: "/seals/umich.svg",
+    description: (
+      <>
+        Relevant Coursework: Mathematical Modeling, Computational Systems, Deep Learning, Applied Statistics.
+      </>
+    ),
+  },
+  /* ─────────────  UC Berkeley – Computer Science  ───────────── */
+  {
+    school:
+      "University of California, Berkeley – College of Computing, Data Science & Society (CDSS)",
+    degree: "B.A. Computer Science",
+    startDate: "2020-08",
+    endDate: "2024-12",
+    gpa: "3.66",
+    website: "https://cdss.berkeley.edu/",
+    logo: "/seals/ucb.svg",
+    description: (
+      <>
+        Courses: Programming Foundations & OOP, Data Structures, Discrete Math &
+        Probability, Data Science Principles, Algorithm Design, Operating
+        Systems, Database Systems, Internet Architecture, Artificial
+        Intelligence, Machine Learning, Computer Security, Optimization.
+      </>
+    ),
+  },
+
+  /* ─────────────  UC Berkeley – Molecular & Cell Biology  ───── */
+  {
+    school: "University of California, Berkeley – College of Letters & Science",
+    degree: (
+      <>
+        B.A. Molecular & Cell Biology
+        <br />
+        <span className=" text-sm">
+          (Genetics, Genomics & Development)
+        </span>
+      </>
+    ),
+    startDate: "2020-08",
+    endDate: "2024-12",
+    gpa: "3.6",
+    website: "https://ls.berkeley.edu/",
+    logo: "/seals/ucb.svg",
+    description: (
+      <>
+        Courses: Organic Chemistry (lecture + lab), Biophysical Chemistry,
+        Biochemistry & Metabolism, Molecular Biology, Genetics & Genomics
+        (lecture + lab), Molecular Medicine, Bacterial Pathogenesis, Immunology.
+      </>
+    ),
+  },
+
+  /* ─────────────  Johns Hopkins – Summer Program  ───────────── */
+  {
+    school: "Johns Hopkins University",
+    degree: "Bioengineering & Biomedical Engineering",
+    startDate: "2019-05",
+    endDate: "2019-08",
+    gpa: "4.0",
+    website: "https://www.jhu.edu/",
+    logo: "/seals/jhu.svg",
+    description: (
+      <>Courses: General Molecular Biology, Protein Engineering, Biochemistry</>
+    ),
+  },
+
+  {
+    school: "Austin Preparatory School",
+    degree: "High School Diploma",
+    startDate: "2018-08",
+    endDate: "2020-06",
+    gpa: "4.0",
+    website: "https://www.austinprep.org/",
+    logo: "/seals/ap.svg",
+    description: (
+      <>
+        College-preparatory curriculum with emphasis on interdisciplinary
+        learning, writing, ethics, and the humanities. Participated in science
+        fairs, math leagues, and other extracurricular activities; strong
+        foundations in STEM and liberal arts.
+      </>
+    ),
+  },
+];
