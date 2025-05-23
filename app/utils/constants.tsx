@@ -54,10 +54,10 @@ export interface SocialLink {
 
 export const bklprojectList = [
   {
-    name: "Software Engineering",
+    name: "Gitlet",
     description:
       "Implemented a version control system that mimics some of the features of the popular system Git (add, commit, push, merge, etc.) through serialization. The project focuses intensively on data structures like HashMap and file manipulation.",
-    tag: "Web Development",
+    tag: "Software Engineering",
     image: "/images/projects/gitlet.png",
     tech: ["Java", "Version Control", "HashMap", "Serialization"],
     course: "CS 61B: Data Structures",

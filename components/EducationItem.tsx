@@ -55,7 +55,7 @@ export function EducationItem({
       bg-[conic-gradient(from_180deg,_#fde047_0deg_180deg,_#3b82f6_180deg_360deg)] 
       shadow-[0_0_15px_3px_rgba(59,130,246,0.4)]"
           >
-            <motion.img
+            <motion.img 
               src={edu.logo}
               alt={`${edu.school} seal`}
               className="w-12 h-12 md:w-20 md:h-20 object-contain rounded-full bg-white dark:bg-black"
