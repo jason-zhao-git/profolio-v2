@@ -47,7 +47,7 @@ export function EducationItem({
       transition={{ duration: 0.3, delay: index * 0.06 }}
       className={`mb-8 ${index === 0 ? "mt-4 sm:mt-6" : ""}`}
     >
-      <div className="relative w-full max-w-full sm:max-w-[460px] md:max-w-[580px] lg:max-w-[620px] rounded-2xl border border-white/20 dark:border-white/10 bg-white/10 dark:bg-white/5 shadow-xl p-6 md:p-8 backdrop-blur-lg backdrop-saturate-150">
+      <div className="relative w-full max-w-full sm:max-w-[460px] md:max-w-[780px] lg:max-w-[620px] rounded-2xl border border-white/20 dark:border-white/10 bg-white/10 dark:bg-white/5 shadow-xl p-6 md:p-8 backdrop-blur-lg backdrop-saturate-150">
         {/* ── Seal ── */}
         {isUMich ? (
           <div
