@@ -2,11 +2,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { RiExternalLinkLine } from "react-icons/ri";
 import { SocialLink, socialLinks } from "@/app/utils/constants";
 import Link from "next/link";
 
-export function SocialLinkItem({
+function SocialLinkItem({
   link,
   index,
 }: {
