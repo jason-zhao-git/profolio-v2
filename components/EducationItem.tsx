@@ -27,7 +27,7 @@ export function EducationItem({
     name.includes("michigan") || edu.logo.toLowerCase().includes("/umich");
 
   const titleGradient = isUMich
-    ? "bg-gradient-to-r from-yellow-600 to-blue-500 dark:from-yellow-300 dark:to-blue-400"
+    ? "bg-gradient-to-r from-yellow-400 to-blue-500 dark:from-yellow-300 dark:to-blue-400"
     : isJHU
     ? "bg-gradient-to-br from-sky-600 via-blue-500 to-indigo-500 dark:from-sky-400 dark:via-blue-400 dark:to-indigo-300"
     : isAustin
@@ -65,12 +65,12 @@ export function EducationItem({
           <img
             src={edu.logo}
             alt={`${edu.school} seal`}
-            className={`absolute -top-6 -right-6 object-contain rounded-full ring-4 w-12 h-12 md:w-20 md:h-20 ${sealRing}`}
+            className={`absolute -top-6 -right-6 object-contain w-12 h-12 md:w-20 md:h-20 rounded-full ring-4 ${sealRing}`}
           />
         )}
 
         {/* ── Header ── */}
-        <div className="flex items-center gap-2 mb-3">
+        <div className="min-h-[3rem]">
           <Link
             href={edu.website}
             target="_blank"
@@ -83,7 +83,7 @@ export function EducationItem({
 
         {/* ── Degree + GPA + Date ── */}
         <div className="flex flex-col md:flex-row md:items-start justify-between mb-4 gap-y-1">
-          <div className="text-xs md:text-sm font-semibold text-gray-800 dark:text-gray-200">
+          <div className="text-xs md:text-sm font-semibold text-gray-800 dark:text-gray-200 whitespace-pre-line">
             {edu.degree}
             {edu.gpa && (
               <div className="font-normal text-gray-600 dark:text-gray-400 text-xs md:text-sm mt-1">
@@ -91,13 +91,14 @@ export function EducationItem({
               </div>
             )}
           </div>
+
           <div className="text-xs md:text-sm text-gray-500 dark:text-gray-400">
             {formatDate(edu.startDate)} — {formatDate(edu.endDate)}
           </div>
         </div>
 
         {/* ── Description ── */}
-        <div className="text-xs md:text-sm leading-relaxed text-gray-700 dark:text-gray-400 mb-4">
+        <div className="text-xs md:text-sm leading-relaxed text-gray-700 dark:text-gray-400 mb-4 min-h-[96px]">
           {edu.description}
         </div>
 
