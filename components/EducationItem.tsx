@@ -47,7 +47,7 @@ export function EducationItem({
       transition={{ duration: 0.3, delay: index * 0.06 }}
       className={`mb-8 ${index === 0 ? "mt-4 sm:mt-6" : ""}`}
     >
-      <div className="relative w-full rounded-2xl border border-white/20 dark:border-white/10 bg-white/10 dark:bg-white/5 shadow-xl p-6 md:p-8 backdrop-blur-lg backdrop-saturate-150">
+      <div className="relative w-full max-w-full sm:max-w-[460px] md:max-w-[580px] lg:max-w-[620px] rounded-2xl border border-white/20 dark:border-white/10 bg-white/10 dark:bg-white/5 shadow-xl p-6 md:p-8 backdrop-blur-lg backdrop-saturate-150">
         {/* ── Seal ── */}
         {isUMich ? (
           <div
@@ -65,12 +65,12 @@ export function EducationItem({
           <img
             src={edu.logo}
             alt={`${edu.school} seal`}
-            className={`absolute -top-6 -right-6 object-contain w-12 h-12 md:w-20 md:h-20 rounded-full ring-4 ${sealRing}`}
+            className={`absolute -top-6 -right-6 object-contain rounded-full ring-4 w-12 h-12 md:w-20 md:h-20 ${sealRing}`}
           />
         )}
 
         {/* ── Header ── */}
-        <div className="min-h-[3rem]">
+        <div className="flex items-center gap-2 mb-3">
           <Link
             href={edu.website}
             target="_blank"
@@ -83,7 +83,7 @@ export function EducationItem({
 
         {/* ── Degree + GPA + Date ── */}
         <div className="flex flex-col md:flex-row md:items-start justify-between mb-4 gap-y-1">
-          <div className="text-xs md:text-sm font-semibold text-gray-800 dark:text-gray-200 whitespace-pre-line">
+          <div className="text-xs md:text-sm font-semibold text-gray-800 dark:text-gray-200">
             {edu.degree}
             {edu.gpa && (
               <div className="font-normal text-gray-600 dark:text-gray-400 text-xs md:text-sm mt-1">
@@ -91,14 +91,13 @@ export function EducationItem({
               </div>
             )}
           </div>
-
           <div className="text-xs md:text-sm text-gray-500 dark:text-gray-400">
             {formatDate(edu.startDate)} — {formatDate(edu.endDate)}
           </div>
         </div>
 
         {/* ── Description ── */}
-        <div className="text-xs md:text-sm leading-relaxed text-gray-700 dark:text-gray-400 mb-4 min-h-[96px]">
+        <div className="text-xs md:text-sm leading-relaxed text-gray-700 dark:text-gray-400 mb-4">
           {edu.description}
         </div>
 
