@@ -34,9 +34,20 @@ export function WorkExperienceItem({
       >
         <RiBriefcase2Line className="text-gray-600 dark:text-gray-400 text-xl" />
         <h3 className="text-sm font-semibold mb-1 flex items-center gap-2">
-          
-          <Link href={experience.websiteLink} target="_blank" rel="noopener noreferrer">
-            <span className="underline underline-offset-2 text-lg font-semibold">
+          <Link
+            href={experience.websiteLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span
+              className={`hover:underline text-lg font-semibold ${
+                experience.company.toLowerCase().includes("bighat")
+                  ? "bg-clip-text text-transparent bg-gradient-to-br from-purple-600 via-fuchsia-500 to-pink-400 dark:from-fuchsia-400 dark:via-purple-400 dark:to-pink-300"
+                  : experience.company.toLowerCase().includes("ucsf")
+                  ? " bg-clip-text text-transparent bg-gradient-to-br from-blue-700 via-sky-600 to-gray-500 dark:from-blue-400 dark:via-sky-300 dark:to-white"
+                  : "text-gray-800 dark:text-white"
+              }`}
+            >
               {experience.company}
             </span>
           </Link>
